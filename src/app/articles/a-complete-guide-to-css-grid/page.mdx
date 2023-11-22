@@ -1,0 +1,98 @@
+import { ArticleLayout } from '@/components/layouts/ArticleLayout'
+import Image from 'next/image'
+import designSystem from './planetaria-design-system.png'
+
+export const article = {
+  author: 'Adam Wathan',
+  date: '2022-09-05',
+  title: 'A Complete Guide to CSS Grid',
+  description:
+    'The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+
+
+In CSS, a "grid" typically refers to the CSS Grid Layout, which is a two-dimensional grid system used for laying out content in web pages. CSS Grid Layout allows you to create complex layouts with rows and columns, making it easier to design responsive and flexible web designs.
+
+<Image src={designSystem} alt="" />
+
+## Grid Container
+
+This is an HTML element that is designated as a grid container using the display: grid; or display: inline-grid; property. It serves as the parent element that contains the grid items.
+
+```css
+.container {
+  display: grid;
+}
+```
+
+## Grid Items
+
+These are the child elements of the grid container. They are positioned within the grid and can span multiple rows and columns.
+
+```css
+.item {
+  /* Styling for grid items */
+}
+```
+
+## Rows and Columns
+
+Grid containers are divided into rows and columns. You can define the size and number of rows and columns using properties like grid-template-rows, grid-template-columns, and shorthand properties like grid-template.
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px 200px;
+}
+```
+
+## Grid Lines
+
+The lines that define the boundaries of grid rows and columns. You can reference these lines when positioning grid items.
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px 200px;
+  grid-gap: 10px;
+}
+```
+
+## Grid Template Areas
+
+You can create a visual representation of the layout by assigning names to grid areas and defining the layout using the grid-template-areas property.
+
+```css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px 200px;
+  grid-gap: 10px;
+}
+```
+
+## Grid Placement
+
+You can control where grid items are placed using properties like grid-row, grid-column, grid-row-start, grid-column-end, etc.
+
+```css
+.item1 {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+}
+
+.item2 {
+  grid-row: 1 / span 2;
+  grid-column: 3;
+}
+```
